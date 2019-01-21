@@ -1,10 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bidirectional Ltd</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Amiri&amp;subset=arabic,latin-ext" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      min-height: calc(100% - 20px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      margin: 10px;
+      font-family: 'Amiri', 'Times New Roman', serif;
+      font-size: 1.4rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    footer {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      text-align: center;
+    }
+    .translated {
+      display: flex;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    .translated > * {
+      flex: 300px 1 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bidirectional Ltd</h1>
+  <main>
+    <div style="text-align: center">
+      <img src="Bidirectional logo.png" alt="Bidirectional" style="width: 100%; max-width: 400px">
+    </div>
+    <div class="translated">
+      <div>
+        Bidirectional Ltd provides services for businesses, organisations and individuals who need specialists in multi-lingual technological solutions, particularly in Arabic.
+      </div>
+      <div lang="ar" dir="rtl">
+        يوفر Bidirectional Ltd خدمات للشركات وللمنظمات وللأفراد الذين يحتاجون الى مختصين في الحلول التكنولوجية متعددة اللغات، وبالاخص اللغة العربية.
+      </div>
+    </div>
+    <div class="translated">
+      <div>
+        These services include consulting and contracting in the fields of programming, social media marketing and translation, as well as training in these areas.
+      </div>
+      <div lang="ar" dir="rtl">
+        من بين هذه الخدمات خدمات استشارية وخدمات مقاولين مختصين في ميادين البرمجة والتسويق عبر الإعلام الاجتماعي والترجمة، وكذلك التدريب في كل هذه الميادين.
+      </div>
+    </div>
+    <div class="translated js-show" style="display:none">
+      <div>
+        For any enquiries, please <a class="js-contact">contact us</a>.
+      </div>
+      <div lang="ar" dir="rtl">
+        للاستفسار، يرجى <a class="js-contact">الاتصال بنا</a>.
+      </div>
+    </div>
+    <noscript>Javascript must be enabled to contact us.</noscript>
+  </main>
+  <footer>
+    © 2019 Bidirectional Ltd. Incorporated in the UK.
+  </footer>
+  <script>
+  'use strict';
+  Array.prototype.forEach.call(document.querySelectorAll('.js-contact'), function(el, i) {
+    el.setAttribute('href', 'maxlto:contactus@bxdxrectxonal.ltd'.replace(/x/g, 'i')
+      + '?body=If you are interested in a quotation, please describe your project and any budgetary requirements in your email.'
+    );
+  });
+  document.querySelector('.js-show').style.display = '';
+  </script>
 </body>
 </html>
