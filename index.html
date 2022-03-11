@@ -77,7 +77,7 @@
     <noscript>Javascript must be enabled to contact us.</noscript>
   </main>
   <footer>
-    © 2019–2021 Bidirectional Ltd. Incorporated in the UK.
+    © <span id="js-years"></span> Bidirectional Ltd. Incorporated in the UK.
   </footer>
   <script>
   'use strict';
@@ -87,6 +87,7 @@
     );
   });
   document.querySelector('.js-show').style.display = '';
+  document.getElementById('js-years').textContent = "2019–" + new Date().getFullYear();
   </script>
 </body>
 </html>
